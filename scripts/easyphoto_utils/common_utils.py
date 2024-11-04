@@ -798,7 +798,7 @@ class auto_to_gpu_model(object):
     def __call__(self, *args, **kwargs):
         move_to_gpu(self.model)
         outputs = self.model(*args, **kwargs)
-        move_to_cpu(self.model)
+        # move_to_cpu(self.model)
         return outputs
 
 
