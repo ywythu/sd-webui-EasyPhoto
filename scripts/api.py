@@ -124,6 +124,7 @@ def easyphoto_infer_forward_api(_: gr.Blocks, app: FastAPI):
         second_denoising_strength = datas.get("second_denoising_strength", 0.35)
         seed = datas.get("seed", -1)
         batch_size = datas.get("batch_size", 1)
+        photo_num = datas.get("photo_num", 2)
         crop_face_preprocess = datas.get("crop_face_preprocess", True)
 
         before_face_fusion_ratio = datas.get("before_face_fusion_ratio", 0.50)
@@ -255,6 +256,7 @@ def easyphoto_infer_forward_api(_: gr.Blocks, app: FastAPI):
                 second_denoising_strength,
                 seed,
                 batch_size,
+                photo_num,
                 crop_face_preprocess,
                 apply_face_fusion_before,
                 apply_face_fusion_after,

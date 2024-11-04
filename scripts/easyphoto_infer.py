@@ -457,6 +457,7 @@ def easyphoto_infer_forward(
         second_denoising_strength,
         seed,
         batch_size,
+        photo_num,
         crop_face_preprocess,
         apply_face_fusion_before,
         apply_face_fusion_after,
@@ -1544,7 +1545,7 @@ def easyphoto_infer_forward(
 
                 # First diffusion, facial reconstruction
                 ep_logger.info("Start First diffusion.")
-                for _ in range(5):
+                for _ in range(photo_num):
                     if not face_shape_match:
                         if not sdxl_pipeline_flag:
                             controlnet_pairs = [
